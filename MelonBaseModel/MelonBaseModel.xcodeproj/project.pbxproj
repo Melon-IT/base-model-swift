@@ -10,6 +10,7 @@
 		4023C6F81C67898E00EEB929 /* MelonBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4023C6F71C67898E00EEB929 /* MelonBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4023C6FF1C67898E00EEB929 /* MelonBaseModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4023C6F41C67898E00EEB929 /* MelonBaseModel.framework */; };
 		4023C7041C67898E00EEB929 /* MelonBaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */; };
+		40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		4023C6FE1C67898E00EEB929 /* MelonBaseModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelonBaseModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonBaseModelTests.swift; sourceTree = "<group>"; };
 		4023C7051C67898E00EEB929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFBaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				4023C6F71C67898E00EEB929 /* MelonBaseModel.h */,
 				4023C6F91C67898E00EEB929 /* Info.plist */,
+				40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */,
 			);
 			path = MelonBaseModel;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -295,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -308,6 +312,7 @@
 		4023C7091C67898E00EEB929 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +323,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.melon-it.MelonBaseModel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4023C70A1C67898E00EEB929 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +383,7 @@
 				4023C70A1C67898E00EEB929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4023C70B1C67898E00EEB929 /* Build configuration list for PBXNativeTarget "MelonBaseModelTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +392,7 @@
 				4023C70D1C67898E00EEB929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
