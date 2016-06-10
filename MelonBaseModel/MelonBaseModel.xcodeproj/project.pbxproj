@@ -11,6 +11,7 @@
 		4023C6FF1C67898E00EEB929 /* MelonBaseModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4023C6F41C67898E00EEB929 /* MelonBaseModel.framework */; };
 		4023C7041C67898E00EEB929 /* MelonBaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */; };
 		40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */; };
+		40CF6CAB1D0AD5CC00768C36 /* MBFBaseDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CF6CAA1D0AD5CC00768C36 /* MBFBaseDataParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonBaseModelTests.swift; sourceTree = "<group>"; };
 		4023C7051C67898E00EEB929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFBaseManager.swift; sourceTree = "<group>"; };
+		40CF6CAA1D0AD5CC00768C36 /* MBFBaseDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFBaseDataParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				4023C6F71C67898E00EEB929 /* MelonBaseModel.h */,
 				4023C6F91C67898E00EEB929 /* Info.plist */,
 				40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */,
+				40CF6CAA1D0AD5CC00768C36 /* MBFBaseDataParser.swift */,
 			);
 			path = MelonBaseModel;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */,
+				40CF6CAB1D0AD5CC00768C36 /* MBFBaseDataParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
