@@ -10,6 +10,10 @@ import Foundation
 
 public class MBFBaseDataParser {
   
+  public init() {
+    
+  }
+  
   public func loadData() {
     
   }
