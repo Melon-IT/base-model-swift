@@ -8,13 +8,13 @@
 
 import Foundation
 
-public protocol DataOperationProtocol: class {
-  func operation(success: Bool, type: UInt?, message: AnyObject?)
+public protocol MBFActionStateProtocol: class {
+  func action(success: Bool, type: UInt?, message: AnyObject?)
 }
 
 public class MBFBaseManager {
   
-  public weak var dataOperationDelegate: DataOperationProtocol?
+  public weak var actionStateDelegate: MBFActionStateProtocol?
   
   public init() {}
   
