@@ -12,40 +12,40 @@ public protocol MBFActionStateProtocol: class {
   func action(success: Bool, type: UInt?, message: AnyObject?)
 }
 
-public class MBFBaseManager {
+open class MBFBaseManager {
   
   public weak var actionStateDelegate: MBFActionStateProtocol?
   
   public init() {}
   
-  public static var isIPhone: Bool {
+  open static var isIPhone: Bool {
     
-    return (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+    return (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone)
   }
   
-  public static var isIPad: Bool {
+  open static var isIPad: Bool {
     
-    return (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+    return (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
   }
   
-  public static var isIPhone3_5Inch: Bool {
+  open static var isIPhone3_5Inch: Bool {
     
-    return (UIScreen.mainScreen().bounds.size.height == 480)
+    return (UIScreen.main.bounds.size.height == 480)
   }
   
-  public static var isIPhone4Inch: Bool {
+  open static var isIPhone4Inch: Bool {
     
-    return (UIScreen.mainScreen().bounds.size.height == 568)
+    return (UIScreen.main.bounds.size.height == 568)
   }
   
-  public static var isIPhone4_7Inch: Bool {
+  open static var isIPhone4_7Inch: Bool {
     
-    return (UIScreen.mainScreen().bounds.size.height == 667)
+    return (UIScreen.main.bounds.size.height == 667)
   }
   
-  public static var isIPhone5_5Inch: Bool {
+  open static var isIPhone5_5Inch: Bool {
     
-    return (UIScreen.mainScreen().scale == 3)
+    return (UIScreen.main.scale == 3)
   }
   
 }

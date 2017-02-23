@@ -27,15 +27,15 @@ public class MBFBaseDataParser {
   }
   
   public func loadFromDefaults(key: String) -> AnyObject? {
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
-    return defaults.objectForKey(key)
+    return defaults.object(forKey: key) as AnyObject?
   }
   
   public func saveToDefaults(key: String, object: AnyObject?) {
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
-    defaults.setObject(object, forKey: key)
+    defaults.set(object, forKey: key)
     defaults.synchronize()
   }
   
