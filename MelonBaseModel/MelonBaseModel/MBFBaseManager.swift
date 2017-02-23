@@ -8,6 +8,10 @@
 
 import Foundation
 
+public protocol DataOperationProtocol: class {
+  func operation(success: Bool, type: UInt?, message: AnyObject?)
+}
+
 open class MBFBaseManager {
   
   public weak var dataOperationDelegate: DataOperationProtocol?
