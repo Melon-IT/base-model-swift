@@ -10,6 +10,8 @@ import Foundation
 
 open class MBFBaseManager {
   
+  public weak var dataOperationDelegate: DataOperationProtocol?
+  
   public init() {}
   
   open static var isIPhone: Bool {
