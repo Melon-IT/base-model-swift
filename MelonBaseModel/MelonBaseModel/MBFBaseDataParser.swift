@@ -8,38 +8,38 @@
 
 import Foundation
 
-public class MBFBaseDataParser {
+open class MBFBaseDataParser {
   
   public init() {
     
   }
   
-  public func loadData() {
+  open func loadData() {
     
   }
   
-  public func saveData() {
+  open func saveData() {
     
   }
   
-  public func parseData(data: AnyObject?) {
+  open func parseData(data: AnyObject?) {
     
   }
   
-  public func loadFromDefaults(key: String) -> AnyObject? {
+  open func loadFromDefaults(key: String) -> AnyObject? {
     let defaults = UserDefaults.standard
     
     return defaults.object(forKey: key) as AnyObject?
   }
   
-  public func saveToDefaults(key: String, object: AnyObject?) {
+  open func saveToDefaults(key: String, object: AnyObject?) {
     let defaults = UserDefaults.standard
     
     defaults.set(object, forKey: key)
     defaults.synchronize()
   }
   
-  public func uniqueUserKey(userId: String,
+  open func uniqueUserKey(userId: String,
                             separator: String,
                             suffix: String) -> String {
     
