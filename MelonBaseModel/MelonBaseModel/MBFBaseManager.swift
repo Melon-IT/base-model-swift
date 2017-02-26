@@ -14,7 +14,7 @@ public protocol MBFActionStateProtocol: class {
 
 open class MBFBaseManager {
   
-  public weak var actionStateDelegate: MBFActionStateProtocol?
+  open weak var actionStateDelegate: MBFActionStateProtocol?
   
   public init() {}
   
