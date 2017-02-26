@@ -20,12 +20,17 @@ open class MBFBaseManager {
   
   open static var isIPhone: Bool {
     
-    return (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone)
+    return (UIDevice.current.userInterfaceIdiom == .phone)
   }
   
   open static var isIPad: Bool {
     
-    return (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+    return (UIDevice.current.userInterfaceIdiom == .pad)
+  }
+  
+  open static var isTv: Bool {
+    
+    return UIDevice.current.userInterfaceIdiom == .tv
   }
   
   open static var isIPhone3_5Inch: Bool {
