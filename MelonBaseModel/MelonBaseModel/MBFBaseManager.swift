@@ -50,7 +50,7 @@ open class MBFBaseManager {
   
   open static var isIPhone5_5Inch: Bool {
     
-    return (UIScreen.main.scale == 3)
+    return (UIScreen.main.bounds.size.height == 736)
   }
   
 }
