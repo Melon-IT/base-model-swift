@@ -8,13 +8,15 @@
 
 import Foundation
 
-public protocol MBFActionStateProtocol: class {
+public protocol MBFActionCompletionProtocol: class {
   func action(success: Bool, type: UInt?, message: AnyObject?)
 }
 
 open class MBFBaseManager {
   
-  open weak var actionStateDelegate: MBFActionStateProtocol?
+  open weak var actionCompletionDelegate: MBFActionCompletionProtocol?
+  
+  open var dataParser: MBFDataParserProtocol?
   
   public init() {}
   
