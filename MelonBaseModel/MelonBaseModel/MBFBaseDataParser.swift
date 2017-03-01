@@ -10,16 +10,19 @@ import Foundation
 
 public protocol MBFDataParserProtocol {
   
-  var parserDataDelegate: MBFParserDataProtocol? {get set}
+  var parserDataListener: MBFParserDataListener? {set get}
   
-  func clearData()
-  func loadData()
-  func saveData()
-  func deleteData()
-  func parse(data: Any?, completionHandler: ((Bool) -> Void)?)
+  var data: Any? {set get}
+  
+  func clear()
+  func load()
+  func save()
+  func delete()
+  func parse()
+  func parse(completionHandler: ((Bool) -> Void)?)
 }
 
-public protocol MBFParserDataProtocol: class {
+public protocol MBFParserDataListener: class {
   func dataDidParse(success: Bool, type: UInt?)
 }
 
