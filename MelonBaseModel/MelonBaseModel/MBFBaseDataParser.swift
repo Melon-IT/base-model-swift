@@ -18,7 +18,6 @@ public protocol MBFDataParserProtocol {
   func load()
   func save()
   func delete()
-  func parse()
   func parse(completionHandler: ((Bool) -> Void)?)
 }
 
