@@ -3,7 +3,7 @@
 //  MelonBaseModel
 //
 //  Created by Tomasz Popis on 10/06/16.
-//  Copyright © 2016 Melon-IT. All rights reserved.
+//  Copyright © 2016 Melon. All rights reserved.
 //
 
 import Foundation
