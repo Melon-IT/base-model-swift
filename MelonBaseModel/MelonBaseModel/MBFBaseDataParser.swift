@@ -8,6 +8,21 @@
 
 import Foundation
 
+public protocol MBFDataParserProtocol {
+  
+  var parserDataDelegate: MBFParserDataProtocol? {get set}
+  
+  func clearData()
+  func loadData()
+  func saveData()
+  func deleteData()
+  func parse(data: Any?, completionHandler: ((Bool) -> Void)?)
+}
+
+public protocol MBFParserDataProtocol: class {
+  func dataDidParse(success: Bool, type: UInt?)
+}
+
 open class MBFBaseDataParser {
   
   public init() {
