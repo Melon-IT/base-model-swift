@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol MBFActionCompletionProtocol: class {
-  func action(success: Bool, type: UInt?, message: AnyObject?)
+  func action(success: Bool, type: UInt?, message: Any?)
 }
 
 open class MBFBaseManager {
