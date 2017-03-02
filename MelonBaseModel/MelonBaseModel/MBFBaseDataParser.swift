@@ -12,17 +12,61 @@ public protocol MBFDataParserProtocol {
   
   var parserDataListener: MBFParserDataListener? {set get}
   
-  var data: Any? {set get}
+  var resource: Any? {set get}
   
-  func clear()
   func load()
   func save()
+  func clear()
   func delete()
   func parse(completionHandler: ((Bool) -> Void)?)
 }
 
-public protocol MBFParserDataListener: class {
+public protocol MBFParserDataListener {
   func dataDidParse(success: Bool, type: UInt?)
+}
+
+open class MBFBundlePropertyListArrayDataParser<Type> {
+  
+  open var plistDataProvider: MBFBundlePropertyListArrayData?
+  
+  
+  public var data: Array<Type>? {
+    
+    return self.plistDataProvider?.data as? Array<Type>
+  }
+  
+  public init() {
+    self.plistDataProvider = MBFBundlePropertyListArrayData()
+  }
+  
+  open func load() {
+    self.plistDataProvider?.read();
+  }
+  
+  open var numberOfItems: Int {
+    var result = 0;
+    if let array = self.data {
+      result = array.count
+    }
+    
+    return result;
+  }
+  
+  open subscript(index: Int) -> Type? {
+    get {
+      var result: Type?
+
+      if let array = self.data,
+        index >= 0 && index < array.count {
+        result = array[index]
+      }
+      
+      return result
+    }
+    
+    set {}
+  }
+
 }
 
 open class MBFBaseDataParser {

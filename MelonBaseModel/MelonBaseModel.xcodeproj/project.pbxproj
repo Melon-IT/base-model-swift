@@ -12,7 +12,8 @@
 		4023C7041C67898E00EEB929 /* MelonBaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */; };
 		40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */; };
 		40CF6CAB1D0AD5CC00768C36 /* MBFBaseDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CF6CAA1D0AD5CC00768C36 /* MBFBaseDataParser.swift */; };
-		E2E4659D1E66C8670025E71D /* MBFPlistDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4659C1E66C8670025E71D /* MBFPlistDataProvider.swift */; };
+		E2D0103D1E680E79006A9332 /* MBFDataResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0103C1E680E79006A9332 /* MBFDataResource.swift */; };
+		E2E4659D1E66C8670025E71D /* MBFBundlePropertyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E4659C1E66C8670025E71D /* MBFBundlePropertyListData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +35,8 @@
 		4023C7051C67898E00EEB929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFBaseManager.swift; sourceTree = "<group>"; };
 		40CF6CAA1D0AD5CC00768C36 /* MBFBaseDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFBaseDataParser.swift; sourceTree = "<group>"; };
-		E2E4659C1E66C8670025E71D /* MBFPlistDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFPlistDataProvider.swift; sourceTree = "<group>"; };
+		E2D0103C1E680E79006A9332 /* MBFDataResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFDataResource.swift; sourceTree = "<group>"; };
+		E2E4659C1E66C8670025E71D /* MBFBundlePropertyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFBundlePropertyListData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,8 @@
 				4023C6F91C67898E00EEB929 /* Info.plist */,
 				40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */,
 				40CF6CAA1D0AD5CC00768C36 /* MBFBaseDataParser.swift */,
-				E2E4659C1E66C8670025E71D /* MBFPlistDataProvider.swift */,
+				E2E4659C1E66C8670025E71D /* MBFBundlePropertyListData.swift */,
+				E2D0103C1E680E79006A9332 /* MBFDataResource.swift */,
 			);
 			path = MelonBaseModel;
 			sourceTree = "<group>";
@@ -206,8 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */,
-				E2E4659D1E66C8670025E71D /* MBFPlistDataProvider.swift in Sources */,
+				E2E4659D1E66C8670025E71D /* MBFBundlePropertyListData.swift in Sources */,
 				40CF6CAB1D0AD5CC00768C36 /* MBFBaseDataParser.swift in Sources */,
+				E2D0103D1E680E79006A9332 /* MBFDataResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
