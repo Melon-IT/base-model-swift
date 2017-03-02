@@ -16,21 +16,15 @@ open class  MBFBundlePropertyListDataReader: MBFDataReader {
     
     self.data = nil
     
-    if let path = self.resource,
+    
+    if let path = Bundle.main.path(forResource: self.resource, ofType: "plist"),
       let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
       
-      if let plistDict =
+      if let plist =
         try? PropertyListSerialization.propertyList(from: data,
                                                     options: [],
-                                                    format: nil) as? Dictionary<AnyHashable,Any> {
-        self.data = plistDict
-        
-      } else if let plistArray =
-        try? PropertyListSerialization.propertyList(from: data,
-                                                    options: [],
-                                                    format: nil) as? Array<Any> {
-        self.data = plistArray
-        
+                                                    format: nil) {
+        self.data = plist
       }
     }
   }
