@@ -16,7 +16,7 @@ open class MBFBaseManager {
   
   open weak var actionCompletionDelegate: MBFActionCompletionProtocol?
   
-  open var dataParser: MBFDataParserProtocol?
+  //open var dataParser: MBFDataParserProtocol?
   
   public init() {}
   

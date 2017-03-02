@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 public protocol MBFDataParserProtocol {
   
   var parserDataListener: MBFParserDataListener? {set get}
@@ -24,23 +25,35 @@ public protocol MBFDataParserProtocol {
 public protocol MBFParserDataListener {
   func dataDidParse(success: Bool, type: UInt?)
 }
+*/
 
-open class MBFBundlePropertyListArrayDataParser<Type> {
+open class MBFPropertListDataFactory {
   
-  open var plistDataProvider: MBFBundlePropertyListArrayData?
+  open class func bundlePropertyListArray<Type>(resource: String) -> MBFPropertyListArray<Type> {
+    
+    let result = MBFPropertyListArray<Type>()
+    result.plistDataReader = MBFBundlePropertyListDataReader()
+    result.plistDataReader?.resource = resource
+    
+    return result
+  }
+}
+
+open class MBFPropertyListArray<Type> {
+  
+  open var plistDataReader: MBFDataReader?
   
   
   public var data: Array<Type>? {
     
-    return self.plistDataProvider?.data as? Array<Type>
+    return self.plistDataReader?.data as? Array<Type>
   }
   
   public init() {
-    self.plistDataProvider = MBFBundlePropertyListArrayData()
   }
   
   open func load() {
-    self.plistDataProvider?.read();
+    self.plistDataReader?.read();
   }
   
   open var numberOfItems: Int {
@@ -69,6 +82,7 @@ open class MBFBundlePropertyListArrayDataParser<Type> {
 
 }
 
+/*
 open class MBFBaseDataParser {
   
   public init() {
@@ -106,5 +120,5 @@ open class MBFBaseDataParser {
     
     return "\(userId)\(separator)\(suffix)"
   }
-  
 }
+   */

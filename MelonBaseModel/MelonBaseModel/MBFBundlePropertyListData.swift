@@ -8,32 +8,30 @@
 
 import Foundation
 
-open class  MBFBundlePropertyListDictionaryData: MBFDataReader {
+open class  MBFBundlePropertyListDataReader: MBFDataReader {
   public var resource: String?
   public var data: Any?
   
   public func read() {
-    if let path = Bundle.main.path(forResource: resource,
-                                   ofType: "plist") {
+    
+    self.data = nil
+    
+    if let path = self.resource,
+      let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
       
-      self.data = NSDictionary(contentsOfFile: path) as? Dictionary<String, Any>
-    }
-  }
-
-  public func clean() {
-    self.data = nil;
-  }
-}
-
-open class MBFBundlePropertyListArrayData: MBFDataReader {
-  public var resource: String?
-  public var data: Any?
-  
-  public func read() {
-    if let path = Bundle.main.path(forResource: resource,
-                                   ofType: "plist") {
-      
-      self.data = NSArray(contentsOfFile: path) as? Array<Any>
+      if let plistDict =
+        try? PropertyListSerialization.propertyList(from: data,
+                                                    options: [],
+                                                    format: nil) as? Dictionary<AnyHashable,Any> {
+        self.data = plistDict
+        
+      } else if let plistArray =
+        try? PropertyListSerialization.propertyList(from: data,
+                                                    options: [],
+                                                    format: nil) as? Array<Any> {
+        self.data = plistArray
+        
+      }
     }
   }
   
