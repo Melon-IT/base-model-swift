@@ -27,7 +27,7 @@ public protocol MBFParserDataListener {
 }
 */
 
-open class MBFPropertListDataFactory {
+open class MBFPropertyListDataFactory {
   
   open class func bundlePropertyListArray<Type>(resource: String) -> MBFPropertyListArray<Type> {
     
