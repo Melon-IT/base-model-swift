@@ -9,116 +9,148 @@
 import Foundation
 
 /*
-public protocol MBFDataParserProtocol {
+ public protocol MBFDataParserProtocol {
+ 
+ var parserDataListener: MBFParserDataListener? {set get}
+ 
+ var resource: Any? {set get}
+ 
+ func load()
+ func save()
+ func clear()
+ func delete()
+ func parse(completionHandler: ((Bool) -> Void)?)
+ }
+ 
+ public protocol MBFParserDataListener {
+ func dataDidParse(success: Bool, type: UInt?)
+ }
+ */
+
+public class MBFPropertyList<Type> {
+  public var resourcesName: String?
+  fileprivate var resources: Type?
   
-  var parserDataListener: MBFParserDataListener? {set get}
+  public init() {}
   
-  var resource: Any? {set get}
+  public init(resources: String) {
+    self.resourcesName = resources
+  }
   
-  func load()
-  func save()
-  func clear()
-  func delete()
-  func parse(completionHandler: ((Bool) -> Void)?)
+  fileprivate func readResourcesFromBundle() {
+    if let path = Bundle.main.path(forResource: resourcesName, ofType: "plist"),
+      let content = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+      
+      self.resources =
+       (try? PropertyListSerialization.propertyList(from: content,
+                                                    options: [],
+                                                    format: nil)) as? Type
+    }
+  }
+  
+  fileprivate func cleanResources() {
+    self.resources = nil
+  }
+
 }
 
-public protocol MBFParserDataListener {
-  func dataDidParse(success: Bool, type: UInt?)
-}
-*/
-
-open class MBFPropertyListDataFactory {
+public class MBFBundleDictionaryPropertyList<Type>: MBFPropertyList<Dictionary<String,Type>>  {
   
-  open class func bundlePropertyListArray<Type>(resource: String) -> MBFPropertyListArray<Type> {
+  public func read() {
+    self.readResourcesFromBundle();
+  }
+  
+  public func clean() {
+    super.cleanResources()
+  }
+  
+  public var numberOfItems: Int {
     
-    let result = MBFPropertyListArray<Type>()
-    result.plistDataReader = MBFBundlePropertyListDataReader()
-    result.plistDataReader?.resource = resource
+    var result = 0;
+    
+    if let counter = self.resources?.count {
+      result = counter
+    }
     
     return result
   }
+  
+  public subscript(key: String) -> Type? {
+
+    return self.resources?[key]
+  }
 }
 
-open class MBFPropertyListArray<Type> {
+public class MBFBundleArrayPropertyList<Type>: MBFPropertyList<Array<Type>> {
   
-  open var plistDataReader: MBFDataReader?
+  public func read() {
+    self.readResourcesFromBundle();
+  }
   
+  public func clean() {
+    super.cleanResources()
+  }
   
-  public var data: Array<Type>? {
+  public var numberOfItems: Int {
     
-    return self.plistDataReader?.data as? Array<Type>
-  }
-  
-  public init() {
-  }
-  
-  open func load() {
-    self.plistDataReader?.read();
-  }
-  
-  open var numberOfItems: Int {
     var result = 0;
-    if let array = self.data {
-      result = array.count
+    
+    if let counter = self.resources?.count {
+      result = counter
     }
     
-    return result;
+    return result
   }
   
-  open subscript(index: Int) -> Type? {
-    get {
+  public subscript(index: Int) -> Type? {
       var result: Type?
-
-      if let array = self.data,
-        index >= 0 && index < array.count {
-        result = array[index]
+      
+      if let counter = self.resources?.count,
+         index >= 0 && index < counter {
+        result = self.resources?[index]
       }
       
       return result
-    }
-    
-    set {}
   }
-
 }
 
 /*
-open class MBFBaseDataParser {
-  
-  public init() {
-    
-  }
-  
-  open func loadData() {
-    
-  }
-  
-  open func saveData() {
-    
-  }
-  
-  open func parseData(data: AnyObject?) {
-    
-  }
-  
-  open func loadFromDefaults(key: String) -> AnyObject? {
-    let defaults = UserDefaults.standard
-    
-    return defaults.object(forKey: key) as AnyObject?
-  }
-  
-  open func saveToDefaults(key: String, object: AnyObject?) {
-    let defaults = UserDefaults.standard
-    
-    defaults.set(object, forKey: key)
-    defaults.synchronize()
-  }
-  
-  open func uniqueUserKey(userId: String,
-                            separator: String,
-                            suffix: String) -> String {
-    
-    return "\(userId)\(separator)\(suffix)"
-  }
-}
-   */
+ open class MBFBaseDataParser {
+ 
+ public init() {
+ 
+ }
+ 
+ open func loadData() {
+ 
+ }
+ 
+ open func saveData() {
+ 
+ }
+ 
+ open func parseData(data: AnyObject?) {
+ 
+ }
+ 
+ open func loadFromDefaults(key: String) -> AnyObject? {
+ let defaults = UserDefaults.standard
+ 
+ return defaults.object(forKey: key) as AnyObject?
+ }
+ 
+ open func saveToDefaults(key: String, object: AnyObject?) {
+ let defaults = UserDefaults.standard
+ 
+ defaults.set(object, forKey: key)
+ defaults.synchronize()
+ }
+ 
+ open func uniqueUserKey(userId: String,
+ separator: String,
+ suffix: String) -> String {
+ 
+ return "\(userId)\(separator)\(suffix)"
+ }
+ }
+ */
