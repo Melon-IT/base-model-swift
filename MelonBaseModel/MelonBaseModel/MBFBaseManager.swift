@@ -3,18 +3,20 @@
 //  MelonBaseModel
 //
 //  Created by Tomasz Popis on 17/02/16.
-//  Copyright © 2016 Melon-IT. All rights reserved.
+//  Copyright © 2016 Melon. All rights reserved.
 //
 
 import Foundation
 
-public protocol MBFActionStateProtocol: class {
-  func action(success: Bool, type: UInt?, message: AnyObject?)
+public protocol MBFActionCompletionProtocol: class {
+  func action(success: Bool, type: UInt?, message: Any?)
 }
 
 open class MBFBaseManager {
   
-  public weak var actionStateDelegate: MBFActionStateProtocol?
+  open weak var actionCompletionDelegate: MBFActionCompletionProtocol?
+  
+  //open var dataParser: MBFDataParserProtocol?
   
   public init() {}
   
@@ -50,7 +52,7 @@ open class MBFBaseManager {
   
   open static var isIPhone5_5Inch: Bool {
     
-    return (UIScreen.main.scale == 3)
+    return (UIScreen.main.bounds.size.height == 736)
   }
   
 }
