@@ -10,8 +10,8 @@
 		4023C6F81C67898E00EEB929 /* MelonBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4023C6F71C67898E00EEB929 /* MelonBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4023C6FF1C67898E00EEB929 /* MelonBaseModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4023C6F41C67898E00EEB929 /* MelonBaseModel.framework */; };
 		4023C7041C67898E00EEB929 /* MelonBaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */; };
-		40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */; };
-		40CF6CAB1D0AD5CC00768C36 /* MBFPropertyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CF6CAA1D0AD5CC00768C36 /* MBFPropertyListData.swift */; };
+		40AE3F9C1C74EF95005C3142 /* MBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE3F9B1C74EF95005C3142 /* MBaseManager.swift */; };
+		40CF6CAB1D0AD5CC00768C36 /* MPropertyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CF6CAA1D0AD5CC00768C36 /* MPropertyListData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,8 @@
 		4023C6FE1C67898E00EEB929 /* MelonBaseModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelonBaseModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonBaseModelTests.swift; sourceTree = "<group>"; };
 		4023C7051C67898E00EEB929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFBaseManager.swift; sourceTree = "<group>"; };
-		40CF6CAA1D0AD5CC00768C36 /* MBFPropertyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBFPropertyListData.swift; sourceTree = "<group>"; };
+		40AE3F9B1C74EF95005C3142 /* MBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBaseManager.swift; sourceTree = "<group>"; };
+		40CF6CAA1D0AD5CC00768C36 /* MPropertyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPropertyListData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 			children = (
 				4023C6F71C67898E00EEB929 /* MelonBaseModel.h */,
 				4023C6F91C67898E00EEB929 /* Info.plist */,
-				40AE3F9B1C74EF95005C3142 /* MBFBaseManager.swift */,
-				40CF6CAA1D0AD5CC00768C36 /* MBFPropertyListData.swift */,
+				40AE3F9B1C74EF95005C3142 /* MBaseManager.swift */,
+				40CF6CAA1D0AD5CC00768C36 /* MPropertyListData.swift */,
 			);
 			path = MelonBaseModel;
 			sourceTree = "<group>";
@@ -206,8 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40AE3F9C1C74EF95005C3142 /* MBFBaseManager.swift in Sources */,
-				40CF6CAB1D0AD5CC00768C36 /* MBFPropertyListData.swift in Sources */,
+				40AE3F9C1C74EF95005C3142 /* MBaseManager.swift in Sources */,
+				40CF6CAB1D0AD5CC00768C36 /* MPropertyListData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

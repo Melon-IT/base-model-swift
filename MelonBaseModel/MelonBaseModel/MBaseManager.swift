@@ -8,15 +8,15 @@
 
 import Foundation
 
-public protocol MBFActionCompletionProtocol: class {
+public protocol MActionCompletionProtocol: class {
   func action(success: Bool, type: UInt?, message: Any?)
 }
 
-open class MBFBaseManager {
+open class MBaseManager {
   
-  open weak var actionCompletionDelegate: MBFActionCompletionProtocol?
+  open weak var actionCompletionDelegate: MActionCompletionProtocol?
   
-  //open var dataParser: MBFDataParserProtocol?
+  //open var dataParser: MDataParserProtocol?
   
   public init() {}
   
@@ -53,6 +53,29 @@ open class MBFBaseManager {
   public static var isIPhone5_5Inch: Bool {
     
     return (UIScreen.main.bounds.size.height == 736)
+  }
+  
+  public static var isIPhone5_8Inch: Bool {
+    
+    return (UIScreen.main.bounds.size.height == 812)
+  }
+  
+  public static var isIPhone6_1_5Inch: Bool {
+    
+    return (UIScreen.main.bounds.size.height == 896)
+  }
+  
+  public func observeBaterryLevel(selector: Selector) {
+    UIDevice.current.isBatteryMonitoringEnabled = true
+    
+    NotificationCenter.default.addObserver(self,
+                                           selector: selector,
+                                           name: UIDevice.batteryLevelDidChangeNotification,
+                                           object: nil)
+  }
+  
+  @objc func batteryLevelDidChange(_ notification: Notification) {
+    //UIDevice.current.batteryLevel
   }
   
 }
