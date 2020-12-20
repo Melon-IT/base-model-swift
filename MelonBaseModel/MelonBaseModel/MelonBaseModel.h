@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
 
 //! Project version number for MelonBaseModel.
 FOUNDATION_EXPORT double MelonBaseModelVersionNumber;
