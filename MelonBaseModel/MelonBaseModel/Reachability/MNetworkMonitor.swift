@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class NetworkMonitor {
+open class MNetworkMonitor {
   var hostReachability: Reachability?
   var internetReachability: Reachability?
   let remoteHostName = ""
@@ -18,7 +18,7 @@ open class NetworkMonitor {
     return self.internetReachability?.currentReachabilityStatus() != NotReachable
   }
   
-  public static let defaultMonitor: NetworkMonitor = NetworkMonitor()
+  public static let defaultMonitor: MNetworkMonitor = MNetworkMonitor()
   
   open func configure() {
     NotificationCenter.default.addObserver(self,
@@ -63,10 +63,10 @@ open class NetworkMonitor {
   }
   
   private func handleFirstOfflineMode() {
-    if NetworkMonitor.offlinePopupShown() {
+    if MNetworkMonitor.offlinePopupShown() {
       return
     }
-    NetworkMonitor.setOfflinePopupShown()
+    MNetworkMonitor.setOfflinePopupShown()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let viewController = storyboard.instantiateViewController(withIdentifier: "OfflineModeInfoViewController")
     UIApplication.shared.windows.first!.rootViewController!.present(viewController, animated: true, completion: {

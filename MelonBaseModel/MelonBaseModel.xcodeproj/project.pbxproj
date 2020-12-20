@@ -12,9 +12,10 @@
 		4023C7041C67898E00EEB929 /* MelonBaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023C7031C67898E00EEB929 /* MelonBaseModelTests.swift */; };
 		40AE3F9C1C74EF95005C3142 /* MBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AE3F9B1C74EF95005C3142 /* MBaseManager.swift */; };
 		40CF6CAB1D0AD5CC00768C36 /* MPropertyListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CF6CAA1D0AD5CC00768C36 /* MPropertyListData.swift */; };
-		E29B741D258F5306007EFF07 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29B741C258F5306007EFF07 /* NetworkMonitor.swift */; };
+		E29B741D258F5306007EFF07 /* MNetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29B741C258F5306007EFF07 /* MNetworkMonitor.swift */; };
 		E29B743B258F5549007EFF07 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E29B743A258F5549007EFF07 /* Reachability.m */; };
 		E29B7459258F74F6007EFF07 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = E29B7414258F526A007EFF07 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2BDB37E258F7D1D00E46ACE /* MBaseDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BDB37D258F7D1D00E46ACE /* MBaseDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +38,9 @@
 		40AE3F9B1C74EF95005C3142 /* MBaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBaseManager.swift; sourceTree = "<group>"; };
 		40CF6CAA1D0AD5CC00768C36 /* MPropertyListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPropertyListData.swift; sourceTree = "<group>"; };
 		E29B7414258F526A007EFF07 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		E29B741C258F5306007EFF07 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		E29B741C258F5306007EFF07 /* MNetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNetworkMonitor.swift; sourceTree = "<group>"; };
 		E29B743A258F5549007EFF07 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E2BDB37D258F7D1D00E46ACE /* MBaseDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBaseDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		4023C6F61C67898E00EEB929 /* MelonBaseModel */ = {
 			isa = PBXGroup;
 			children = (
+				E2BDB37C258F7CF100E46ACE /* DataProvider */,
 				E29B740D258F5237007EFF07 /* Reachability */,
 				40AE3F9B1C74EF95005C3142 /* MBaseManager.swift */,
 				40CF6CAA1D0AD5CC00768C36 /* MPropertyListData.swift */,
@@ -104,9 +107,17 @@
 			children = (
 				E29B7414258F526A007EFF07 /* Reachability.h */,
 				E29B743A258F5549007EFF07 /* Reachability.m */,
-				E29B741C258F5306007EFF07 /* NetworkMonitor.swift */,
+				E29B741C258F5306007EFF07 /* MNetworkMonitor.swift */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		E2BDB37C258F7CF100E46ACE /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E2BDB37D258F7D1D00E46ACE /* MBaseDataProvider.swift */,
+			);
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,9 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AE3F9C1C74EF95005C3142 /* MBaseManager.swift in Sources */,
-				E29B741D258F5306007EFF07 /* NetworkMonitor.swift in Sources */,
+				E29B741D258F5306007EFF07 /* MNetworkMonitor.swift in Sources */,
 				E29B743B258F5549007EFF07 /* Reachability.m in Sources */,
 				40CF6CAB1D0AD5CC00768C36 /* MPropertyListData.swift in Sources */,
+				E2BDB37E258F7D1D00E46ACE /* MBaseDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
