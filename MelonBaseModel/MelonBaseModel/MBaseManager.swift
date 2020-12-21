@@ -65,11 +65,12 @@ open class MBaseManager {
     return (UIScreen.main.bounds.size.height == 896)
   }
   
-  public func observeBaterryLevel(selector: Selector) {
+  public func observeBaterryLevel() {
+    
     UIDevice.current.isBatteryMonitoringEnabled = true
     
     NotificationCenter.default.addObserver(self,
-                                           selector: selector,
+                                           selector: #selector(batteryLevelDidChange),
                                            name: UIDevice.batteryLevelDidChangeNotification,
                                            object: nil)
   }
