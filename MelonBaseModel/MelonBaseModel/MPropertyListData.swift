@@ -27,7 +27,7 @@ import Foundation
  }
  */
 
-public class MBFPropertyList<Type> {
+public class MPropertyList<Type> {
   public var resourcesName: String?
   fileprivate var resources: Type?
   
@@ -39,7 +39,7 @@ public class MBFPropertyList<Type> {
   
   fileprivate func readResourcesFromBundle() {
     if let path = Bundle.main.path(forResource: resourcesName, ofType: "plist"),
-      let content = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+       let content = try? Data(contentsOf: URL(fileURLWithPath: path)) {
       
       self.resources =
        (try? PropertyListSerialization.propertyList(from: content,
@@ -54,7 +54,7 @@ public class MBFPropertyList<Type> {
 
 }
 
-public class MBFBundleDictionaryPropertyList<Type>: MBFPropertyList<Dictionary<String,Type>>  {
+public class MBundleDictionaryPropertyList<Type>: MPropertyList<Dictionary<String,Type>>  {
   
   public func read() {
     self.readResourcesFromBundle();
@@ -81,7 +81,7 @@ public class MBFBundleDictionaryPropertyList<Type>: MBFPropertyList<Dictionary<S
   }
 }
 
-public class MBFBundleArrayPropertyList<Type>: MBFPropertyList<Array<Type>> {
+public class MBundleArrayPropertyList<Type>: MPropertyList<Array<Type>> {
   
   public func read() {
     self.readResourcesFromBundle();
