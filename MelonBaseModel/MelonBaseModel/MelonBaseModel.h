@@ -15,6 +15,6 @@ FOUNDATION_EXPORT double MelonBaseModelVersionNumber;
 //! Project version string for MelonBaseModel.
 FOUNDATION_EXPORT const unsigned char MelonBaseModelVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <MelonBaseModel/PublicHeader.h>
+// In this header, you should import all the  headers of your framework using statements like #import <MelonBaseModel/Header.h>
 
 
