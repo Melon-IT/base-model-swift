@@ -8,24 +8,6 @@
 
 import Foundation
 
-/*
- public protocol MBFDataParserProtocol {
- 
- var parserDataListener: MBFParserDataListener? {set get}
- 
- var resource: Any? {set get}
- 
- func load()
- func save()
- func clear()
- func delete()
- func parse(completionHandler: ((Bool) -> Void)?)
- }
- 
- public protocol MBFParserDataListener {
- func dataDidParse(success: Bool, type: UInt?)
- }
- */
 
 public class MPropertyList<Type> {
   public var resourcesName: String?
@@ -114,43 +96,3 @@ public class MBundleArrayPropertyList<Type>: MPropertyList<Array<Type>> {
   }
 }
 
-/*
- open class MBFBaseDataParser {
- 
- public init() {
- 
- }
- 
- open func loadData() {
- 
- }
- 
- open func saveData() {
- 
- }
- 
- open func parseData(data: AnyObject?) {
- 
- }
- 
- open func loadFromDefaults(key: String) -> AnyObject? {
- let defaults = UserDefaults.standard
- 
- return defaults.object(forKey: key) as AnyObject?
- }
- 
- open func saveToDefaults(key: String, object: AnyObject?) {
- let defaults = UserDefaults.standard
- 
- defaults.set(object, forKey: key)
- defaults.synchronize()
- }
- 
- open func uniqueUserKey(userId: String,
- separator: String,
- suffix: String) -> String {
- 
- return "\(userId)\(separator)\(suffix)"
- }
- }
- */
