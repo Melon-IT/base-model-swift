@@ -3,12 +3,12 @@
 //  MelonBaseModel
 //
 //  Created by Tomasz Popis on 12/03/2021.
-//  Copyright © 2021 Melon-IT. All rights reserved.
+//  Copyright © 2021 Melon. All rights reserved.
 //
 
 import Foundation
 
-public class MPropertyListDataProvider<T, E>: MDataProviderProtocol {
+open class MPropertyListDataProvider<T, E>: MDataProviderProtocol {
   
   public var collection: T?
   public var filter: ((E) -> Bool)?
@@ -16,8 +16,7 @@ public class MPropertyListDataProvider<T, E>: MDataProviderProtocol {
   public var dataIsReady: DataIsReadyHandler?
   public var shouldRefresh: (() -> Bool)?
   
-  public private(set) var localUrl: URL
-  
+  private var localUrl: URL
   private var fromResource: Bool
   
   public init?(forResource name: String) {
@@ -54,15 +53,15 @@ public class MPropertyListDataProvider<T, E>: MDataProviderProtocol {
                                                      options: [],
                                                      format: nil)
         self.collection = propertyList as? T
-      } catch {
-        
-      }
+        self.dataIsReady?()
+      } catch { }
     }
   }
   
   public func clear() {
     self.collection = nil
     self.filter = nil
+    self.dataIsReady?()
   }
   
   public func save() {
