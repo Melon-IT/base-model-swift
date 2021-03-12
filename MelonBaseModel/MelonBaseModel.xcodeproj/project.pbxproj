@@ -16,6 +16,7 @@
 		E29B743B258F5549007EFF07 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E29B743A258F5549007EFF07 /* Reachability.m */; };
 		E29B7459258F74F6007EFF07 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = E29B7414258F526A007EFF07 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2BDB37E258F7D1D00E46ACE /* MDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BDB37D258F7D1D00E46ACE /* MDataProvider.swift */; };
+		E2EE68BA25FB6CF300FB75E2 /* MPListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EE68B925FB6CF300FB75E2 /* MPListDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		E29B741C258F5306007EFF07 /* MNetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNetworkMonitor.swift; sourceTree = "<group>"; };
 		E29B743A258F5549007EFF07 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E2BDB37D258F7D1D00E46ACE /* MDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDataProvider.swift; sourceTree = "<group>"; };
+		E2EE68B925FB6CF300FB75E2 /* MPListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPListDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				E2BDB37D258F7D1D00E46ACE /* MDataProvider.swift */,
+				E2EE68B925FB6CF300FB75E2 /* MPListDataProvider.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				E29B743B258F5549007EFF07 /* Reachability.m in Sources */,
 				40CF6CAB1D0AD5CC00768C36 /* MPropertyListData.swift in Sources */,
 				E2BDB37E258F7D1D00E46ACE /* MDataProvider.swift in Sources */,
+				E2EE68BA25FB6CF300FB75E2 /* MPListDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
