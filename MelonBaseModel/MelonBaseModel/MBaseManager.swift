@@ -16,8 +16,6 @@ open class MBaseManager {
   
   open weak var actionCompletionDelegate: MActionCompletionProtocol?
   
-  //open var dataParser: MDataParserProtocol?
-  
   public init() {}
   
   public static var isIPhone: Bool {
@@ -61,7 +59,7 @@ open class MBaseManager {
   }
   
   public static var isIPhone6_1_5Inch: Bool {
-    
+
     return (UIScreen.main.bounds.size.height == 896)
   }
   
@@ -76,7 +74,7 @@ open class MBaseManager {
   }
   
   @objc func batteryLevelDidChange(_ notification: Notification) {
-    //UIDevice.current.batteryLevel
+
   }
   
 }

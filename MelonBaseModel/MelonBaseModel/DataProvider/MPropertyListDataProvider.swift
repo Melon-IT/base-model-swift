@@ -16,8 +16,8 @@ open class MPropertyListDataProvider<T, E>: MDataProviderProtocol {
   public var dataIsReady: DataIsReadyHandler?
   public var shouldRefresh: (() -> Bool)?
   
-  private var localUrl: URL
-  private var fromResource: Bool
+  public private(set) var localUrl: URL
+  public private(set) var fromResource: Bool
   
   public init?(forResource name: String) {
     if let url = Bundle.main.url(forResource: name, withExtension: "plist") {

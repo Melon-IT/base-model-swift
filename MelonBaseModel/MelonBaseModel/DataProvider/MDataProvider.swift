@@ -11,11 +11,10 @@ import Foundation
 public typealias DataIsReadyHandler = () -> Void
 public typealias ShouldRefresh = () -> Bool
 
-public protocol MDataProtocol {
-  associatedtype T
+public protocol MLocalDataProviderProtocol {
+  
   associatedtype E
   
-  var collection: T? { get }
   var filter: ((E)  -> Bool)? { get set }
   
   var dataIsReady: DataIsReadyHandler? { get set }
@@ -24,7 +23,7 @@ public protocol MDataProtocol {
   func clear()
 }
 
-public protocol MDataProviderProtocol: MDataProtocol {
+public protocol MDataProviderProtocol: MLocalDataProviderProtocol {
   var shouldRefresh: ShouldRefresh? { get set }
   
   func save()
